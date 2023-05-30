@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 
 def levy_brownian(N):
     # Generate N steps for Brownian motion
-    b = np.random.normal(0, 1, N)
+    b = np.zeros(N)
+    b[1:] = np.random.normal(0, 1, N-1)
     # Generate N-1 steps for Lévy process
     z = np.random.normal(0, 1, N-1)
     # Calculate the increments for the Lévy process
